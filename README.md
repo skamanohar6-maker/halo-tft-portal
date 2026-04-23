@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# halo-tft-portal — archived
 
-## Getting Started
+> **This repository has been merged into [Target-halo](https://github.com/skamanohar6-maker/Target-halo).**
+> New location: `src/features/tft/` · live at https://target-halo.vercel.app/tft
 
-First, run the development server:
+## Why archived
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+This was a standalone Next.js prototype of the TFT (Technology, Finance & Transactions)
+document tracker for Indian VD/PE legal workflows — Condition Precedents and Condition
+Subsequents across Debentures, Preference Shares, and Execution Version documents.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+As part of the Target-halo SaaS modularisation (April 2026), the components were lifted
+into the main Halo application rather than kept as a separate deployment. The rationale
+is documented in
+[`docs/strategy/saas-modularization.md`](https://github.com/skamanohar6-maker/Target-halo/blob/main/docs/strategy/saas-modularization.md)
+— both repos were Stride-owned, TFT had no backend or auth, and the merge lets the module
+share Halo's identity, audit, entity graph, and deal workflow when W1/W3 land.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Where things moved
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Old path (this repo) | New path (Target-halo) |
+|---|---|
+| `src/types/index.ts` | `src/features/tft/types.ts` |
+| `src/data/categories.ts` | `src/features/tft/data/categories.ts` |
+| `src/data/facilities.ts` | `src/features/tft/data/facilities.ts` |
+| `src/data/store.ts` | `src/features/tft/data/store.ts` |
+| `src/components/*.tsx` | `src/features/tft/components/*.tsx` |
+| `src/app/page.tsx` | `src/features/tft/TftWorkspace.tsx` + `src/pages/TftPage.tsx` |
 
-## Learn More
+## Migration commit
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[`2a1487b`](https://github.com/skamanohar6-maker/Target-halo/commit/2a1487b) — feat(tft):
+merge halo-tft-portal as a native module under /tft
